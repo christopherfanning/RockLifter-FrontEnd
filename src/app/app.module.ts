@@ -8,12 +8,16 @@ import { NewProjectComponent } from './new-project/new-project.component';
 import { HttpClientModule } from "@angular/common/http";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {ReactiveFormsModule} from "@angular/forms";
+import { HomeComponent } from './home/home.component';
+import { NavComponent } from './nav/nav.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProjectComponent,
-    NewProjectComponent
+    NewProjectComponent,
+    HomeComponent,
+    NavComponent
   ],
     imports: [
         BrowserModule,
