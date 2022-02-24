@@ -8,6 +8,10 @@ const routes: Routes = [
     path: 'project/new',
     component: NewProjectComponent
   },
+  {
+    path: '',
+    component: HomeComponent
+  },
 ];
 
 @NgModule({

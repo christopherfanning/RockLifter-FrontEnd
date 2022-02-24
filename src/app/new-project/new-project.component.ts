@@ -27,7 +27,7 @@ export class NewProjectComponent implements OnInit {
     console.warn('Your post has been submitted', this.projectForm.value);
     // this.postData.setItem(this.projectForm.value.id, JSON.stringify(this.projectForm.value))
     this.http
-      .post(`http://localhost:9092/api/project`, JSON.stringify(this.projectForm.value))
+      .post(`https://rocklifter.cfan.dev:9092/api/project`, JSON.stringify(this.projectForm.value))
       .subscribe((data) => {
         console.log(data)
 
