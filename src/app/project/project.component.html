@@ -1,2 +1,6 @@
 <h1>This is a list of all the projects in the app!</h1>
 
+<div *ngFor="let project of projects; index as i;">
+  <h3>{{project.title}}</h3>
+  <p>{{project.description}}</p>
+</div>
