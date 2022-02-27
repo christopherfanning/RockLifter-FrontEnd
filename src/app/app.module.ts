@@ -10,6 +10,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {ReactiveFormsModule} from "@angular/forms";
 import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
+import { NewIssueComponent } from './new-issue/new-issue.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { NavComponent } from './nav/nav.component';
     ProjectComponent,
     NewProjectComponent,
     HomeComponent,
-    NavComponent
+    NavComponent,
+    NewIssueComponent
   ],
     imports: [
         BrowserModule,

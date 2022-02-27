@@ -10,6 +10,10 @@ const routes: Routes = [
     component: ProjectComponent
   },
   {
+    path: 'project/:id',
+    component: ProjectDetailsComponent
+  },
+  {
     path: 'project/new',
     component: NewProjectComponent
   },
