@@ -37,7 +37,7 @@ export class NewProjectComponent implements OnInit {
     console.warn('Your post has been submitted', this.projectForm.value);
     // this.postData.setItem(this.projectForm.value.id, JSON.stringify(this.projectForm.value))
     this.http
-      .post(`http://localhost:8443/api/project`, JSON.stringify(this.projectForm.value), {'headers':this.headers})
+      .post(`${this.baseUrl}/api/project`, JSON.stringify(this.projectForm.value), {'headers':this.headers})
       // .post(`https://rocklifter.cfan.dev:8443/api/project`, JSON.stringify(this.projectForm.value), {'headers':this.headers})
       // .post( `https://54.173.171.184:8443/api/project`, JSON.stringify(this.projectForm.value), {'headers':this.headers})
       .subscribe((data) => {

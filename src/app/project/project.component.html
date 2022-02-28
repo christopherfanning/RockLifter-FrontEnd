@@ -3,10 +3,12 @@
 <div class="project">
   <h1>{{project.title}}</h1>
   <h3>{{project.description}}</h3>
-<!--  TODO Show the list of issues. -->
-<!--  TODO add list button to create issues. -->
   <h2>Issues</h2>
   <div class="issue-bar"><a class="create-issue">+</a></div>
+  <div *ngFor="let issue of issues">
+    <h2>{{issue.title}}</h2>
+    <h3>{{issue.description}}</h3>
+  </div>
 
 </div>
 

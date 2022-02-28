@@ -6,6 +6,7 @@ import { ActivatedRoute } from "@angular/router";
 import {ModalDismissReasons, NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {Validators} from "@angular/forms";
 import {FormBuilder} from "@angular/forms";
+import {environment} from "../../environments/environment";
 
 
 @Component({
@@ -19,6 +20,8 @@ export class ProjectComponent implements OnInit {
   projectId: any;
   closeResult = '';
   issueForm: any;
+  baseUrl = environment.baseUrl;
+  issues: any;
 
   constructor(private http: HttpClient,
               private route: ActivatedRoute,
@@ -57,7 +60,7 @@ ngOnInit(): void {
     })
   this.http
     .get(
-      `http://localhost:8443/api/project/${this.projectId}`,
+      `${this.baseUrl}/api/project/${this.projectId}`,
       // `https://rocklifter.cfan.dev:8443/api/project`
       // `https://54.173.171.184/:8443/api/project`,
       // {'headers':this.headers}
@@ -65,6 +68,17 @@ ngOnInit(): void {
     .subscribe((response) => {
       console.log(response);
       this.project = response;
+    });
+  this.http
+    .get(
+      `${this.baseUrl}/api/project/${this.projectId}/issue`,
+      // `https://rocklifter.cfan.dev:8443/api/project`
+      // `https://54.173.171.184/:8443/api/project`,
+      // {'headers':this.headers}
+    )
+    .subscribe((response) => {
+      console.log(response);
+      this.issues = response;
     });
 }
   open(content: any) {
@@ -88,9 +102,8 @@ ngOnInit(): void {
     console.warn('Your post has been submitted', this.issueForm.value);
     // this.postData.setItem(this.projectForm.value.id, JSON.stringify(this.projectForm.value))
     this.http
-      .post(`http://localhost:8443/api/project/${this.projectId}/issue`, JSON.stringify(this.issueForm.value), )
+      .post(`${this.baseUrl}/api/project/${this.projectId}/issue`, JSON.stringify(this.issueForm.value), )
       // .post(`https://rocklifter.cfan.dev:8443/api/project`, JSON.stringify(this.projectForm.value), {'headers':this.headers})
-      // .post( `https://54.173.171.184/api/project`, JSON.stringify(this.projectForm.value), {'headers':this.headers})
       .subscribe((data) => {
         console.log("I think this is the response:");
         console.log(data);
