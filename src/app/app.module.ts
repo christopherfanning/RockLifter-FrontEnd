@@ -11,6 +11,7 @@ import {ReactiveFormsModule} from "@angular/forms";
 import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
 import { NewIssueComponent } from './new-issue/new-issue.component';
+import { ProjectListComponent } from './project-list/project-list.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { NewIssueComponent } from './new-issue/new-issue.component';
     NewProjectComponent,
     HomeComponent,
     NavComponent,
-    NewIssueComponent
+    NewIssueComponent,
+    ProjectListComponent
   ],
     imports: [
         BrowserModule,

@@ -3,18 +3,19 @@ import { RouterModule, Routes } from '@angular/router';
 import {NewProjectComponent} from "./new-project/new-project.component";
 import {HomeComponent} from "./home/home.component";
 import {ProjectComponent} from "./project/project.component";
+import {ProjectListComponent} from "./project-list/project-list.component";
 
 const routes: Routes = [
   {
     path: 'project',
-    component: ProjectComponent
+    component: ProjectListComponent
   },
   {
     path: 'project/:id',
-    component: ProjectDetailsComponent
+    component: ProjectComponent
   },
   {
-    path: 'project/new',
+    path: 'new/project',
     component: NewProjectComponent
   },
   {
