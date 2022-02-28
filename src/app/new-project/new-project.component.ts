@@ -3,6 +3,7 @@ import { FormBuilder } from "@angular/forms";
 import { Validators } from "@angular/forms";
 import { HttpClient } from "@angular/common/http";
 import { HttpHeaders} from "@angular/common/http";
+import {environment} from "../../environments/environment";
 
 
 @Component({
@@ -10,14 +11,18 @@ import { HttpHeaders} from "@angular/common/http";
   templateUrl: './new-project.component.html',
   styleUrls: ['./new-project.component.css']
 })
+
 export class NewProjectComponent implements OnInit {
-  headers= new HttpHeaders()
+  projectForm: any;
+  baseUrl = environment.baseUrl;
+
+  headers = new HttpHeaders()
     .set('content-type', 'application/json')
     .set('Access-Control-Allow-Origin', '*');
-  projectForm: any;
 
   constructor(private formBuilder: FormBuilder,
               private http: HttpClient) {
+
 
     this.projectForm = this.formBuilder.group({
       title:['', [Validators.required, Validators.minLength(1),Validators.maxLength(200)]],
