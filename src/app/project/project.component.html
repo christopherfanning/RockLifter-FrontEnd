@@ -9,3 +9,52 @@
   <div class="issue-bar"><a class="create-issue">+</a></div>
 
 </div>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  </div>
+  <div class="modal-body">
+
+      <form [formGroup]="issueForm" (ngSubmit)="issueSubmit()">
+        <div class="row g-3">
+
+          <div class="col-6">
+            <label for="title" class="form-label">Issue Title</label>
+            <div class="input-group has-validation">
+              <input type="text" class="form-control" id="title" placeholder="title" formControlName="title" required>
+            </div>
+          </div>
+
+
+          <div class="col-6">
+            <label for="description" class="form-label">Issue Description</label>
+            <div class="input-group has-validation">
+              <input type="text" class="form-control" id="description" placeholder="description" formControlName="description" required>
+            </div>
+          </div>
+
+
+          <button class="button btn-lg col-3 btn-outline-success" type="submit" [disabled]="!issueForm.valid">Submit your post</button>
+        </div>
+
+        <div class="mb-3">
+          <label for="dateOfBirth">Date of birth</label>
+          <div class="input-group">
+            <input id="dateOfBirth" class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #dp="ngbDatepicker">
+            <button class="btn btn-outline-secondary calendar" (click)="dp.toggle()" type="button"></button>
+          </div>
+        </div>
+      </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+  </div>
+</ng-template>
+
+<button class="btn btn-lg btn-outline-primary" (click)="open(content)">Launch demo modal</button>
+
+<hr>
+
+<pre>{{ closeResult }}</pre>
