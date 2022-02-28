@@ -1,10 +1,8 @@
-<h1>Ok this is where each project will get rendered.</h1>
-
 <div class="project">
   <h1>{{project.title}}</h1>
   <h3>{{project.description}}</h3>
   <h2>Issues</h2>
-  <div class="issue-bar"><a class="create-issue">+</a></div>
+<!--  <div class="issue-bar"><a class="create-issue">+</a></div>-->
   <div *ngFor="let issue of issues">
     <h2>{{issue.title}}</h2>
     <h3>{{issue.description}}</h3>
@@ -38,16 +36,16 @@
           </div>
 
 
-          <button class="button btn-lg col-3 btn-outline-success" type="submit" [disabled]="!issueForm.valid">Submit your post</button>
+          <button class="button btn-lg btn-outline-success" type="submit" [disabled]="!issueForm.valid">Submit</button>
         </div>
 
-        <div class="mb-3">
-          <label for="dateOfBirth">Date of birth</label>
-          <div class="input-group">
-            <input id="dateOfBirth" class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #dp="ngbDatepicker">
-            <button class="btn btn-outline-secondary calendar" (click)="dp.toggle()" type="button"></button>
-          </div>
-        </div>
+<!--        <div class="mb-3">-->
+<!--          <label for="dateOfBirth">Date of birth</label>-->
+<!--          <div class="input-group">-->
+<!--            <input id="dateOfBirth" class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #dp="ngbDatepicker">-->
+<!--            <button class="btn btn-outline-secondary calendar" (click)="dp.toggle()" type="button"></button>-->
+<!--          </div>-->
+<!--        </div>-->
       </form>
   </div>
   <div class="modal-footer">
@@ -55,7 +53,7 @@
   </div>
 </ng-template>
 
-<button class="btn btn-lg btn-outline-primary" (click)="open(content)">Launch demo modal</button>
+<button class="btn btn-lg btn-outline-success" (click)="open(content)">Create Issue</button>
 
 <hr>
 
