@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  baseUrl: 'https://rocklifter-api.herokuapp.com/'
+  baseUrl: 'https://rocklifter-api.herokuapp.com'
 };
