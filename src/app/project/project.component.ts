@@ -10,7 +10,7 @@ import { ActivatedRoute } from "@angular/router";
 })
 export class ProjectComponent implements OnInit {
   // get the data.
-  projects: any;
+  project: any;
   projectId: any;
 
   // headers= new HttpHeaders()
@@ -28,20 +28,26 @@ export class ProjectComponent implements OnInit {
       'Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJoYXRlbTEyMyIsImF1dGgiOlt7ImF1dGhvcml0eSI6IlJPTEVfRU1Q'
   });
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,
+              private route: ActivatedRoute) { }
 
 
 ngOnInit(): void {
+  this.route.paramMap
+    .subscribe(params => {
+      let paramId: string = params.get('id') || '';
+      this.projectId = paramId;
+    })
   this.http
     .get(
-      `http://localhost:8443/api/project/${projectId}`,
+      `http://localhost:8443/api/project/${this.projectId}`,
       // `https://rocklifter.cfan.dev:8443/api/project`
       // `https://54.173.171.184/:8443/api/project`,
       // {'headers':this.headers}
     )
     .subscribe((response) => {
       console.log(response);
-      this.projects = response;
+      this.project = response;
     });
 }
 
