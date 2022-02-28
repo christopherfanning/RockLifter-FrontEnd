@@ -23,6 +23,10 @@ export class ProjectComponent implements OnInit {
   baseUrl = environment.baseUrl;
   issues: any;
 
+  headers = new HttpHeaders()
+    .set('content-type', 'application/json')
+    .set('Access-Control-Allow-Origin', '*');
+
   constructor(private http: HttpClient,
               private route: ActivatedRoute,
               private modalService: NgbModal,
@@ -35,20 +39,17 @@ export class ProjectComponent implements OnInit {
 
   }
 
-  // headers= new HttpHeaders()
-  //   .set('content-type', 'application/json')
-  //   .set('Access-Control-Allow-Origin', '*');
+  // this.headers = new HttpHeaders({
+  //   'Content-Type': 'application/json',
+  //   'Access-Control-Allow-Origin': '*',
+  //   'Access-Control-Allow-Credentials': 'true',
+  //   'Access-Control-Allow-Methods': ' POST, GET, OPTIONS, DELETE',
+  //   'Access-Control-Max-Age': ' 3600',
+  //   'Access-Control-Allow-Headers': 'Content-Type, Accept, X-Requested-With, remember-me',
+  //   'Authorization':
+  //     'Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJoYXRlbTEyMyIsImF1dGgiOlt7ImF1dGhvcml0eSI6IlJPTEVfRU1Q'
+  // });
 
-  headers = new HttpHeaders({
-    'Content-Type': 'application/json',
-    'Access-Control-Allow-Origin': ' http://localhost:4200',
-    'Access-Control-Allow-Credentials': 'true',
-    'Access-Control-Allow-Methods': ' POST, GET, OPTIONS, DELETE',
-    'Access-Control-Max-Age': ' 3600',
-    'Access-Control-Allow-Headers': 'Content-Type, Accept, X-Requested-With, remember-me',
-    'Authorization':
-      'Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJoYXRlbTEyMyIsImF1dGgiOlt7ImF1dGhvcml0eSI6IlJPTEVfRU1Q'
-  });
 
 
 
@@ -61,9 +62,7 @@ ngOnInit(): void {
   this.http
     .get(
       `${this.baseUrl}/api/project/${this.projectId}`,
-      // `https://rocklifter.cfan.dev:8443/api/project`
-      // `https://54.173.171.184/:8443/api/project`,
-      // {'headers':this.headers}
+      {'headers':this.headers}
     )
     .subscribe((response) => {
       console.log(response);
@@ -72,9 +71,7 @@ ngOnInit(): void {
   this.http
     .get(
       `${this.baseUrl}/api/project/${this.projectId}/issue`,
-      // `https://rocklifter.cfan.dev:8443/api/project`
-      // `https://54.173.171.184/:8443/api/project`,
-      // {'headers':this.headers}
+      {'headers':this.headers}
     )
     .subscribe((response) => {
       console.log(response);
@@ -98,11 +95,13 @@ ngOnInit(): void {
       return `with: ${reason}`;
     }
   }
+
   issueSubmit(): void {
     console.warn('Your post has been submitted', this.issueForm.value);
     // this.postData.setItem(this.projectForm.value.id, JSON.stringify(this.projectForm.value))
     this.http
-      .post(`${this.baseUrl}/api/project/${this.projectId}/issue`, JSON.stringify(this.issueForm.value), )
+      .post(`${this.baseUrl}/api/project/${this.projectId}/issue`, JSON.stringify(this.issueForm.value),
+        {'headers':this.headers})
       // .post(`https://rocklifter.cfan.dev:8443/api/project`, JSON.stringify(this.projectForm.value), {'headers':this.headers})
       .subscribe((data) => {
         console.log("I think this is the response:");
