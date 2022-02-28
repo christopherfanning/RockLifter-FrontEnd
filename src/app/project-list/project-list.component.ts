@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {environment} from "../../environments/environment";
 
 @Component({
   selector: 'app-project-list',
@@ -10,6 +11,7 @@ export class ProjectListComponent implements OnInit {
 
   // get the data.
   projects: any;
+  baseUrl = environment.baseUrl;
   // projectId: any;
 
   // headers= new HttpHeaders()
@@ -38,7 +40,7 @@ export class ProjectListComponent implements OnInit {
   ngOnInit(): void {
     this.http
       .get(
-        `http://localhost:8443/api/project`,
+        `${this.baseUrl}/api/project`,
         // `https://rocklifter.cfan.dev:8443/api/project`
         // `https://54.173.171.184/:8443/api/project`,
         // {'headers':this.headers}
