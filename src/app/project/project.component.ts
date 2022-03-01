@@ -15,7 +15,8 @@ import {environment} from "../../environments/environment";
   styleUrls: ['./project.component.css']
 })
 export class ProjectComponent implements OnInit {
-  // get the data.
+
+  active = 1;
   project: any;
   projectId: any;
   closeResult = '';
@@ -35,6 +36,7 @@ export class ProjectComponent implements OnInit {
     this.issueForm = this.formBuilder.group({
       title:['', [Validators.required, Validators.minLength(1),Validators.maxLength(200)]],
       description: ['', Validators.required],
+      status: ['Open']
     });
 
   }
