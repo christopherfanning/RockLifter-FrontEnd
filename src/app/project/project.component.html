@@ -25,10 +25,14 @@
       </ng-template>
     </li>
     <li [ngbNavItem]="3">
-      <a ngbNavLink>Nothing</a>
+      <a ngbNavLink>All</a>
       <ng-template ngbNavContent>
-        <h1>maybe have this all issues or delete it</h1>
-<!--        TODO something with this tab? All issues?-->
+        <div *ngFor="let issue of issues">
+            <h3>{{issue.title}}</h3>
+          <h5>{{issue.description}}</h5>
+            <h6>{{issue.status}}</h6>
+
+        </div>
       </ng-template>
     </li>
   </ul>
