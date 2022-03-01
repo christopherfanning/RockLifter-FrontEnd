@@ -1,1 +1,36 @@
-<p>edit-issue works!</p>
+<h1>Edit issue</h1>
+<div *ngIf="issue">
+
+  <form [formGroup]="editIssueForm" (ngSubmit)="issueSubmit()">
+    <div class="row g-3">
+      <h1>{{issue.title}}</h1>
+      <div class="col-6">
+        <label for="title" class="form-label">Issue Title</label>
+        <div class="input-group has-validation">
+          <input type="text" class="form-control" id="title" value={{issue.title}} formControlName="title" required>
+        </div>
+      </div>
+
+
+      <div class="col-6">
+        <label for="description" class="form-label">Issue Description</label>
+        <div class="input-group has-validation">
+          <textarea type="text" class="form-control" id="description" placeholder={{issue.description}}
+                    formControlName="description" required rows="3">What what</textarea>
+        </div>
+      </div>
+
+
+      <label for="status" class="control-label">Status</label>
+      <select class="form-select" id="status" formControlName="status">
+        <option selected>Open this select menu</option>
+        <option value="open">Open</option>
+        <option value="closed">Closed</option>
+      </select>
+
+
+      <button class="button btn-lg btn-outline-success" type="submit" [disabled]="!editIssueForm.valid">Submit</button>
+    </div>
+
+  </form>
+</div>

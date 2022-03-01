@@ -5,6 +5,7 @@ import {HomeComponent} from "./home/home.component";
 import {ProjectComponent} from "./project/project.component";
 import {ProjectListComponent} from "./project-list/project-list.component";
 import {IssuePageComponent} from "./issue-page/issue-page.component";
+import {EditIssueComponent} from "./edit-issue/edit-issue.component";
 
 const routes: Routes = [
   {
@@ -18,6 +19,10 @@ const routes: Routes = [
   {
     path: 'issue/:id',
     component: IssuePageComponent
+  },
+  {
+    path: 'issue/:id/edit',
+    component: EditIssueComponent
   },
   {
     path: 'new/project',
