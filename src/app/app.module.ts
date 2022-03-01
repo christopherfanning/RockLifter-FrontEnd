@@ -14,6 +14,7 @@ import { NewIssueComponent } from './new-issue/new-issue.component';
 import { ProjectListComponent } from './project-list/project-list.component';
 import { NgbNavModule} from "@ng-bootstrap/ng-bootstrap";
 import { IssuePageComponent } from './issue-page/issue-page.component';
+import { EditIssueComponent } from './edit-issue/edit-issue.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { IssuePageComponent } from './issue-page/issue-page.component';
     NavComponent,
     NewIssueComponent,
     ProjectListComponent,
-    IssuePageComponent
+    IssuePageComponent,
+    EditIssueComponent
   ],
     imports: [
         BrowserModule,
