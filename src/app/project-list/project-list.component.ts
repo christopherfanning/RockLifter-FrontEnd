@@ -38,6 +38,7 @@ export class ProjectListComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    // gets all the projects.
     this.http
       .get(
         `${this.baseUrl}/api/project`,

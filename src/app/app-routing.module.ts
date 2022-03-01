@@ -4,6 +4,7 @@ import {NewProjectComponent} from "./new-project/new-project.component";
 import {HomeComponent} from "./home/home.component";
 import {ProjectComponent} from "./project/project.component";
 import {ProjectListComponent} from "./project-list/project-list.component";
+import {IssuePageComponent} from "./issue-page/issue-page.component";
 
 const routes: Routes = [
   {
@@ -13,6 +14,10 @@ const routes: Routes = [
   {
     path: 'project/:id',
     component: ProjectComponent
+  },
+  {
+    path: 'issue/:id',
+    component: IssuePageComponent
   },
   {
     path: 'new/project',

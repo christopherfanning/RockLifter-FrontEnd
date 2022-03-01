@@ -7,9 +7,18 @@
     <li [ngbNavItem]="1">
       <a ngbNavLink>Open</a>
       <ng-template ngbNavContent>
+<!--        <div class="project" *ngFor="let project of projects; index as i;">-->
+<!--          <a routerLink="/project/{{project.id}}">-->
+<!--            <h3>{{project.title}}</h3>-->
+<!--            <p>{{project.description}}</p>-->
+<!--          </a>-->
+<!--        </div>-->
         <div *ngFor="let issue of issues">
+
           <div *ngIf="issue.status ==='open'">
+            <a routerLink="/issue/{{issue.id}}">
             <h1>{{issue.title}}</h1>
+          </a>
           </div>
         </div>
       </ng-template>
