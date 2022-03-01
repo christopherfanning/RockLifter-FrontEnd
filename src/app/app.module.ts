@@ -13,6 +13,7 @@ import { NavComponent } from './nav/nav.component';
 import { NewIssueComponent } from './new-issue/new-issue.component';
 import { ProjectListComponent } from './project-list/project-list.component';
 import { NgbNavModule} from "@ng-bootstrap/ng-bootstrap";
+import { IssuePageComponent } from './issue-page/issue-page.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { NgbNavModule} from "@ng-bootstrap/ng-bootstrap";
     HomeComponent,
     NavComponent,
     NewIssueComponent,
-    ProjectListComponent
+    ProjectListComponent,
+    IssuePageComponent
   ],
     imports: [
         BrowserModule,
