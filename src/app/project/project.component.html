@@ -75,13 +75,19 @@
 <!--            </div>-->
 <!--          </div>-->
 
-          <div class="form-group">
-            <label for="status" class="control-label">Status</label>
-            <select class="form-control" id="status" formControlName="status">
-              <option value="open" selected>Open</option>
-              <option value="closed">Closed</option>
-            </select>
-          </div>
+<!--          <div class="form-group">-->
+<!--            <label for="status" class="control-label">Status</label>-->
+<!--            <select class="form-control" id="status" formControlName="status">-->
+<!--            </select>-->
+<!--          </div>-->
+
+          <label for="status" class="control-label">Status</label>
+          <select class="form-select" id="status" formControlName="status">
+            <option selected>Open this select menu</option>
+            <option value="open" >Open</option>
+            <option value="closed">Closed</option>
+          </select>
+
 
           <button class="button btn-lg btn-outline-success" type="submit" [disabled]="!issueForm.valid">Submit</button>
         </div>
