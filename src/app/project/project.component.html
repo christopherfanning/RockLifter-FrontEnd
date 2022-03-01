@@ -11,7 +11,9 @@
 
           <div *ngIf="issue.status ==='open'">
             <a routerLink="/issue/{{issue.id}}">
-            <h1>{{issue.title}}</h1>
+              <h3>{{issue.title}}</h3>
+              <h5>{{issue.description}}</h5>
+              <h6>{{issue.status}}</h6>
           </a>
           </div>
         </div>
@@ -22,7 +24,11 @@
       <ng-template ngbNavContent>
         <div *ngFor="let issue of issues">
           <div *ngIf="issue.status ==='closed'">
-            <h1>{{issue.title}}</h1>
+            <a routerLink="/issue/{{issue.id}}">
+              <h3>{{issue.title}}</h3>
+              <h5>{{issue.description}}</h5>
+              <h6>{{issue.status}}</h6>
+            </a>
           </div>
         </div>
       </ng-template>
@@ -31,10 +37,11 @@
       <a ngbNavLink>All</a>
       <ng-template ngbNavContent>
         <div *ngFor="let issue of issues">
+          <a routerLink="/issue/{{issue.id}}">
             <h3>{{issue.title}}</h3>
-          <h5>{{issue.description}}</h5>
+            <h5>{{issue.description}}</h5>
             <h6>{{issue.status}}</h6>
-
+          </a>
         </div>
       </ng-template>
     </li>
@@ -67,7 +74,6 @@
             </div>
           </div>
 
-
           <div class="col-6">
             <label for="description" class="form-label">Issue Description</label>
             <div class="input-group has-validation">
@@ -85,13 +91,6 @@
           <button class="button btn-lg btn-outline-success" type="submit" [disabled]="!issueForm.valid">Submit</button>
         </div>
 
-<!--        <div class="mb-3">-->
-<!--          <label for="dateOfBirth">Date of birth</label>-->
-<!--          <div class="input-group">-->
-<!--            <input id="dateOfBirth" class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #dp="ngbDatepicker">-->
-<!--            <button class="btn btn-outline-secondary calendar" (click)="dp.toggle()" type="button"></button>-->
-<!--          </div>-->
-<!--        </div>-->
       </form>
   </div>
   <div class="modal-footer">

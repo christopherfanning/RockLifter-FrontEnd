@@ -5,6 +5,7 @@ import {FormBuilder, Validators} from "@angular/forms";
 import {environment} from "../../environments/environment";
 import {ModalDismissReasons, NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import { ElementRef } from "@angular/core";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-edit-issue',
@@ -28,6 +29,7 @@ export class EditIssueComponent implements OnInit {
   constructor(private route: ActivatedRoute,
               private http: HttpClient,
               private modalService: NgbModal,
+              private router: Router,
               private formBuilder: FormBuilder,
               private ele: ElementRef
   ) {
@@ -76,6 +78,7 @@ export class EditIssueComponent implements OnInit {
       });
 
     this.editIssueForm.reset();
+    this.router.navigate([`/issue/${this.issueId}`]);
   }
 
 

@@ -7,7 +7,7 @@ import {ModalDismissReasons, NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {Validators} from "@angular/forms";
 import {FormBuilder} from "@angular/forms";
 import {environment} from "../../environments/environment";
-
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-project',
@@ -31,6 +31,7 @@ export class ProjectComponent implements OnInit {
   constructor(private http: HttpClient,
               private route: ActivatedRoute,
               private modalService: NgbModal,
+              private router: Router,
               private formBuilder: FormBuilder) {
 
     this.issueForm = this.formBuilder.group({
@@ -79,6 +80,12 @@ ngOnInit(): void {
       console.log(response);
       this.issues = response;
     });
+
+  this.issueForm = this.formBuilder.group({
+    title:['', [Validators.required, Validators.minLength(1),Validators.maxLength(200)]],
+    description: ['', Validators.required],
+    status: ['Open']
+  });
 }
   open(content: any) {
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
@@ -112,5 +119,6 @@ ngOnInit(): void {
       });
 
     this.issueForm.reset();
+    this.router.navigate([`/project/${this.projectId}`]);
   }
 }
