@@ -1,68 +1,125 @@
-<div class="project">
-  <h1>{{project.title}}</h1>
-  <h3>{{project.description}}</h3>
-  <h2>Issues</h2>
-<!--  <div class="issue-bar"><a class="create-issue">+</a></div>-->
-  <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
-    <li [ngbNavItem]="1">
-      <a ngbNavLink>Open</a>
-      <ng-template ngbNavContent>
-        <div *ngFor="let issue of issues">
+<div *ngIf="project.title">
 
-          <div *ngIf="issue.status ==='open'">
-            <a routerLink="/issue/{{issue.id}}">
-              <h3>{{issue.title}}</h3>
-              <h5>{{issue.description}}</h5>
-              <h6>{{issue.status}}</h6>
-          </a>
+  <div class="project">
+    <h1>{{project.title}}</h1>
+    <h3>{{project.description}}</h3>
+    <h2>Issues</h2>
+    <!--  <div class="issue-bar"><a class="create-issue">+</a></div>-->
+
+<!--    ********* Tabbed Nav *****************-->
+    <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+      <li [ngbNavItem]="1">
+        <a ngbNavLink>Open</a>
+        <ng-template ngbNavContent>
+          <div *ngFor="let issue of issues">
+
+            <div *ngIf="issue.status ==='open'">
+              <div class="issue-wrapper">
+                  <a class="issue" routerLink="/issue/{{issue.id}}">
+                    <div class="card mb-3" style="max-width: 540px;">
+                      <div class="row g-0">
+                        <div class="col-md-4">
+<!--                          <i class="fa-solid fa-bug"></i>-->
+                          <i class="fa-solid fa-bug" style="font-size: 5rem;"></i>
+                        </div>
+                        <div class="col-md-8">
+                          <div class="card-body">
+                            <h5 class="card-title">{{issue.title}}</h5>
+                            <p>{{issue.description}}</p>
+                            <h6>{{issue.status}}</h6>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
           </div>
-        </div>
-      </ng-template>
-    </li>
-    <li [ngbNavItem]="2">
-      <a ngbNavLink>Closed</a>
-      <ng-template ngbNavContent>
-        <div *ngFor="let issue of issues">
-          <div *ngIf="issue.status ==='closed'">
-            <a routerLink="/issue/{{issue.id}}">
-              <h3>{{issue.title}}</h3>
-              <h5>{{issue.description}}</h5>
-              <h6>{{issue.status}}</h6>
-            </a>
+<!--              <a routerLink="/issue/{{issue.id}}">-->
+<!--                <h3>{{issue.title}}</h3>-->
+<!--                <h5>{{issue.description}}</h5>-->
+<!--              </a>-->
+<!--            </div>-->
+<!--          </div>-->
+        </ng-template>
+      </li>
+      <li [ngbNavItem]="2">
+        <a ngbNavLink>Closed</a>
+        <ng-template ngbNavContent>
+          <div *ngFor="let issue of issues">
+            <div *ngIf="issue.status ==='closed'">
+              <div class="issue-wrapper">
+                <a class="issue" routerLink="/issue/{{issue.id}}">
+                  <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                      <div class="col-md-4">
+                        <!--                          <i class="fa-solid fa-bug"></i>-->
+                        <i class="fa-solid fa-bug" style="font-size: 5rem;"></i>
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h5 class="card-title">{{issue.title}}</h5>
+                          <p>{{issue.description}}</p>
+                          <h6>{{issue.status}}</h6>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+<!--              <a routerLink="/issue/{{issue.id}}">-->
+<!--                <h3>{{issue.title}}</h3>-->
+<!--                <h5>{{issue.description}}</h5>-->
+<!--                <h6>{{issue.status}}</h6>-->
+<!--              </a>-->
+            </div>
           </div>
-        </div>
-      </ng-template>
-    </li>
-    <li [ngbNavItem]="3">
-      <a ngbNavLink>All</a>
-      <ng-template ngbNavContent>
-        <div *ngFor="let issue of issues">
-          <a routerLink="/issue/{{issue.id}}">
-            <h3>{{issue.title}}</h3>
-            <h5>{{issue.description}}</h5>
-            <h6>{{issue.status}}</h6>
-          </a>
-        </div>
-      </ng-template>
-    </li>
-  </ul>
+        </ng-template>
+      </li>
+      <li [ngbNavItem]="3">
+        <a ngbNavLink>All</a>
+        <ng-template ngbNavContent>
+          <div *ngFor="let issue of issues">
+            <div class="issue-wrapper">
+              <a class="issue" routerLink="/issue/{{issue.id}}">
+                <div class="card mb-3" style="max-width: 540px;">
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <!--                          <i class="fa-solid fa-bug"></i>-->
+                      <i class="fa-solid fa-bug" style="font-size: 5rem;"></i>
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h5 class="card-title">{{issue.title}}</h5>
+                        <p>{{issue.description}}</p>
+                        <h6>{{issue.status}}</h6>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+<!--            <a routerLink="/issue/{{issue.id}}">-->
+<!--              <h3>{{issue.title}}</h3>-->
+<!--              <h5>{{issue.description}}</h5>-->
+<!--              <h6>{{issue.status}}</h6>-->
+<!--            </a>-->
+          </div>
+        </ng-template>
+      </li>
+    </ul>
 
-  <div [ngbNavOutlet]="nav" class="mt-2"></div>
-
-  <pre>Active: {{ active }}</pre>
-<!--  <div *ngFor="let issue of issues">-->
-<!--    <h2>{{issue.title}}</h2>-->
-<!--    <h3>{{issue.description}}</h3>-->
-<!--  </div>-->
-
-</div>
-
-<ng-template #content let-modal>
-  <div class="modal-header">
-    <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
-    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    <div [ngbNavOutlet]="nav" class="mt-2"></div>
   </div>
-  <div class="modal-body">
+
+
+  <!--************    All the Modal stuff ****************-->
+  <ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
 
       <form [formGroup]="issueForm" (ngSubmit)="issueSubmit()">
         <div class="row g-3">
@@ -77,29 +134,32 @@
           <div class="col-6">
             <label for="description" class="form-label">Issue Description</label>
             <div class="input-group has-validation">
-              <input type="text" class="form-control" id="description" placeholder="description" formControlName="description" required>
+              <input type="text" class="form-control" id="description" placeholder="description"
+                     formControlName="description" required>
             </div>
           </div>
 
           <label for="status" class="control-label">Status</label>
           <select class="form-select" id="status" formControlName="status">
-            <option selected value="open" >Open</option>
+            <option selected value="open">Open</option>
             <option value="closed">Closed</option>
           </select>
 
 
-          <button class="button btn-lg btn-outline-success" type="submit" [disabled]="!issueForm.valid">Submit</button>
+          <!--          <button class="button btn-lg btn-outline-success" type="submit" [disabled]="!issueForm.valid">Submit</button>-->
         </div>
 
       </form>
-  </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
-  </div>
-</ng-template>
+    </div>
+    <div class="modal-footer">
+      <button type="submit" class="btn btn-outline-success" (click)="modal.close('Save click', issueSubmit())"
+              [disabled]="!issueForm.valid">Save
+      </button>
+    </div>
+  </ng-template>
 
-<button class="btn btn-lg btn-outline-success" (click)="open(content)">Create Issue</button>
+  <button class="btn btn-lg btn-outline-success" (click)="open(content)">Create Issue</button>
 
-<hr>
+  <hr>
 
-<pre>{{ closeResult }}</pre>
+</div>

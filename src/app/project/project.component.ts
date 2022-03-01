@@ -120,5 +120,6 @@ ngOnInit(): void {
 
     this.issueForm.reset();
     this.router.navigate([`/project/${this.projectId}`]);
+    window.location.reload();
   }
 }

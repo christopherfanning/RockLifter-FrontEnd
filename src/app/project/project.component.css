@@ -1,0 +1,6 @@
+.issue{
+  color: black;
+}
+.issue:hover{
+  color: darkgreen;
+}
