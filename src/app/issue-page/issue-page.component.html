@@ -1,7 +1,8 @@
 <div *ngIf="issue.title">
 
-  <h1>{{issue.title}}</h1>
-  <h3>{{issue.description}}</h3>
+  <h1>Title: {{issue.title}}</h1>
+  <h4>Status: {{issue.status}}</h4>
+  <p>Description: {{issue.description}}</p>
 </div>
 
 <ng-template #content let-modal>
