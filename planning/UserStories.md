@@ -7,6 +7,7 @@
 * As a regular user I should be able to comment on an issue to clarify what it's for or track progress.
 * As a manager I should be able to see which issues are assigned to which team members so I can better manage them.
 * as a user I should be able to sort issues by open, closed, or all to see what needs my attention.
-
+* As a user I should be able to login so not just anyone can look at all our secret squirrel stuff. 
+* As a user I should be able to logout to toss the old JWT so it can't get used for evil.
 
   [Back to ReadMe](../README.md)
