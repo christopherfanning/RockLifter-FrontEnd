@@ -49,12 +49,12 @@ Here is a link to my [Wireframes](./planning/WireFrames.md)
 <img height="100" style="display: inline" src="./README/lombok.png" alt=""/>
 <img height="100" style="display: inline" src="./README/postgres.png" alt=""/>
 <img height="100" style="display: inline" src="./README/javalogo.png" alt=""/>
-<img height="100" style="display: inline" src="./README/Archivo_Angular_full_color_logo.svg alt=""/>
-<img height="100" style="display: inline" src="./README/Bootstrap_logo.svg.png alt=""/>
-<img height="100" style="display: inline" src="./README/CSS3_logo_and_wordmark.svg.png alt=""/>
-<img height="100" style="display: inline" src="./README/File_Typescript_logo_2020.svg alt=""/>
-<img height="100" style="display: inline" src="./README/Heroku_logo.svg.png alt=""/>
-<img height="100" style="display: inline" src="./README/fontawesome.png alt=""/>
+<img height="100" style="display: inline" src="./README/Archivo_Angular_full_color_logo.svg" alt=""/>
+<img height="100" style="display: inline" src="./README/Bootstrap_logo.svg.png" alt=""/>
+<img height="100" style="display: inline" src="./README/CSS3_logo_and_wordmark.svg.png" alt=""/>
+<img height="100" style="display: inline" src="./README/File_Typescript_logo_2020.svg" alt=""/>
+<img height="100" style="display: inline" src="./README/Heroku_logo.svg.png" alt=""/>
+<img height="100" style="display: inline" src="./README/fontawesome.png" alt=""/>
 
 
 
