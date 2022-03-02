@@ -1,6 +1,8 @@
 #Rock Lifter
 Take a look underneath the rock and check out all the bugs.
 
+![](./planning/img/app.png)
+
 
 
 ## Delusions of Grandeur

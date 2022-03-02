@@ -1,6 +1,46 @@
 .issue{
   color: black;
+  padding-left: 2rem;
+  margin-left: 1rem;
 }
+
+.issue-wrapper{
+  margin-left: 2rem;
+
+}
+
+.issue-card{
+  box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+}
+
+.issue-logo{
+  justify-content: center;
+  align-items: center;
+}
+
+.heading-wrapper{
+  padding: 1rem;
+}
+
+#issues-heading{
+  display:flex;
+  justify-content: space-between;
+}
+
+.bug-icon{
+  padding-top: 30px;
+}
+
+.fa-bug{
+  color: darkred;
+}
+
 .issue:hover{
   color: darkgreen;
+}
+
+.project{
+  box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+  padding-bottom: 1rem;
+margin-bottom: 1rem;
 }

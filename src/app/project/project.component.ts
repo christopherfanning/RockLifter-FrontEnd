@@ -122,4 +122,15 @@ ngOnInit(): void {
     this.router.navigate([`/project/${this.projectId}`]);
     window.location.reload();
   }
+  deleteProject(projectId: any): void{
+    this.http
+      .delete(`${this.baseUrl}/api/project/${this.projectId}`,
+        {'headers':this.headers})
+      .subscribe((data) => {
+        console.log("This should delete the project.");
+        console.log(data);
+
+      });
+    this.router.navigate([`/project`]);
+  }
 }
