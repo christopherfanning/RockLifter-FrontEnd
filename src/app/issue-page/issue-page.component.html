@@ -1,8 +1,15 @@
 <div *ngIf="issue.title">
-
-  <h1>Title: {{issue.title}}</h1>
-  <h4>Status: {{issue.status}}</h4>
-  <p>Description: {{issue.description}}</p>
+  <div id="issue-heading" class="">
+    <h1 class="display-3"> {{issue.title}}</h1>
+    <h4 class="display-6">Status: {{issue.status}}</h4>
+    <div class="description-box">
+      <h5 class="display-6">Description: </h5>
+     <p> {{issue.description}} </p>
+    </div>
+    <hr>
+    <button class="btn btn-lg btn-outline-success" routerLink="/project/{{issue.projectId}}">Back to project</button>
+    <button class="btn btn-lg btn-outline-success" routerLink="/issue/{{issueId}}/edit">Edit Issue</button>
+  </div>
 </div>
 
 <ng-template #content let-modal>
@@ -19,5 +26,3 @@
   </div>
 </ng-template>
 
-<button class="btn btn-lg btn-outline-success" routerLink="/project/{{issue.projectId}}">Back to project</button>
-<button class="btn btn-lg btn-outline-success" routerLink="/issue/{{issueId}}/edit">Edit Issue</button>
