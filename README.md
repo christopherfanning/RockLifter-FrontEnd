@@ -1,13 +1,24 @@
-#Rock Lifter
+# Rock Lifter
 Take a look underneath the rock and check out all the bugs.
 
+## General Approach
+* An restful API written using Spring framework
+* The API uses JWT protected routes that interface with a Postgres database
+* An Angular frontend makes requests to this API in a contextual fashion.
+* That data is presented to the user in a way that makes sense depending on where the user is in the application.
 
-
-## Delusions of Grandeur
+## Delusions of Grandeur 
 * Hosted on my VPS
 * Persistent auth with a JWT in localStorage
 * Third party integration with github
 * Third party auth with Auth0
+
+### The struggles
+* CORS - it was tough to tell where it was failing. Spring? Chrome? Who?
+* Firewalls - I was able to rediscover all the security I implemented on my VPS.
+* Styles - learned about Material templates late in the week, it looks like a good solution.
+* Angular - there's a lot going on with this framework.
+
 
 ## User Stories
 Here is a link to my [User Stories](./planning/UserStories.md).
