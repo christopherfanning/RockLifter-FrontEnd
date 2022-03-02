@@ -2,7 +2,7 @@
 Take a look underneath the rock and check out all the bugs.
 
 ## General Approach
-* An restful API written using Spring framework
+* A restful API written using Spring framework
 * The API uses JWT protected routes that interface with a Postgres database
 * An Angular frontend makes requests to this API in a contextual fashion.
 * That data is presented to the user in a way that makes sense depending on where the user is in the application.
